@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Setup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Setup</h2>
+
+
+<fieldset>
+    <legend>Category Details :</legend>
+    <label>ProductId:</label>
+    <input type="text" id="txtproductid" name="pid"><br><br>
+    <label>CategoryId:</label>
+    <input type="text" id="txtcategoryid" name="cid"><br><br>
+    <label>CategoryName:</label>
+    <input type="text" id="txtcategoryname" name="cname"><br><br>
+    <button id="btnsubmit"> Submit </button>
+    <button id="btnupdate">Update</button>
+    
+</fieldset>
+
+<br />
+<br />
+<hr />
+<div class="container">
+    <table class="table-striped table table-hover table table-bordered grid-table" id="category-dtl-tbl" style="width: 60%;">
+        <thead id="tableheader">
+            <tr>
+                <th>ProductId</th>
+                <th>CategoryId</th>
+                <th>CategoryName</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+</div>
+<script>
+    var Categorydtlurl = '@Url.Action("Insertcatdtls","CategoryMaster")';
+    var getcategorydataurl = '@Url.Action("Getcatdata", "CategoryMaster")';
+    var Deletecatdataurl = '@Url.Action("Deletecatdata", "CategoryMaster")';
+    var Editcategoryurl = '@Url.Action("Editcategorydata", "CategoryMaster")';
+
+</script>
+<script src="~/wwwroot/js/categorymaster.js"></script>
+
+

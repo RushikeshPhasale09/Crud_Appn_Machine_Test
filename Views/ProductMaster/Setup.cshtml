@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Setup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Setup</h2>
+
+<fieldset>
+    <legend>Product Details :</legend>
+    <label>ProductId:</label>
+    <input type="text" id="txtproductid" name="pid"><br><br>
+    <label>ProductName:</label>
+    <input type="text" id="txtproductname" name="pname"><br><br>
+    <button id="btnsubmit"> Submit </button>
+    <button id="btnupdate"> Update </button>
+</fieldset>
+
+<br />
+<br />
+<hr />
+<div class="container">
+    <table class="table-striped table table-hover table table-bordered grid-table" id="product-dtl-tbl" style="width: 60%;">
+        <thead id="tableheader">
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+</div>
+<script>
+    var productdtlurl = '@Url.Action("insertproductdtls", "ProductMaster")';
+    var getproddataurl = '@Url.Action("Getproductdtls", "ProductMaster")';
+    var Deletedataurl = '@Url.Action("Deleteproductdtls", "ProductMaster")';
+    var editdataurl = '@Url.Action("Updateproductdtls", "ProductMaster")';
+</script>
+<script src="~/wwwroot/js/productmaster.js"></script>
